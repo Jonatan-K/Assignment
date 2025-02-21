@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sivun kuvaus">
+  <title>Kolmas-sivu</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/scriptP3.js" defer></script> <!--Linkitetään scripti ja tyylit oikeasta polusta-->
+
+</head>
+<body>
+  <!-- Banneri, jossa header kuvaamaan nykyistä sivustoa -->
+  <header class="banner">
+    <h1>Kortit-sivu</h1>
+  </header>
+
+<!-- Navigaatiopalkki. Sisältää linkit toisille sivuille -->
+  <nav class="nav-bar">
+    <a href="toinen.html" class="nav-link left">Nopat</a>
+    <a href="../index.html" class="nav-link right">Koti</a>
+  </nav>
+
+  <!-- Pääsisältö, joka tulee bannerin ja nav-barin alle -->
+  <main>
+    <section class="content-area">
+      <!-- Vasen osio: kuva -->
+      <div class="left-section">
+        <img src="../media/kortti_vasen.png" alt="Jätkä-kortti">
+      </div>
+
+      <!-- Keskiosa: teksti -->
+      <div class="center-section">
+            <img src="../media/kortit.png" alt="Kuva eri korttien maista">
+        <p id="GameText">Pelaa peliä!</p>
+        <!-- Tuloksen näyttökenttä -->
+        <div class="card-result">
+            <input type="text" id="CardTotal" placeholder="Kortin arvo">
+        </div>
+        <!--Nappia painaessa ajetaan scriptiä-->
+        <button id="StartButton">Arvaa kortin arvo!</button>
+        <h2>Säännöt</h2>
+        <p>Arvaa arvotun kortin arvo (1-13)<br>Syötä numero kenttään ja tarkista painamalla Arvaa kortin arvo nappia.</p>
+        <p>Oikeita arvauksia: <output id="correctCount">0</output></p>
+        <p>Väärin arvausta: <output id="wrongCount">0</output></p>
+
+      </div>
+
+      <!-- Oikea osio: kuva -->
+      <div class="right-section">
+        <img src="../media/kortti_oikea.png" alt="Kunkku-kortti">
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>Kuvat: <a href="https://pixabay.com/" target="_blank">Pixabaystä</a></p>
+  </footer>
+</body>
+</html>

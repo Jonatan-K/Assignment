@@ -1,0 +1,158 @@
+/* Yleiset asetukset */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+/* Body flexbox-asetteluna, jotta pääsisältö venyy ja footer pysyy alareunassa */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Banneri, joka pysyy ylhäällä */
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-image: url('../media/noppa_banneri.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1000;
+}
+
+/* Navigaatiopalkki bannerin alla */
+.nav-bar {
+  position: fixed;
+  top: 200px; /* bannerin korkeus */
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  z-index: 999;
+}
+
+/* Navigaatiolinkkien ulkoasu */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.nav-link:hover {
+  background-color: #555;
+}
+
+/* Pääsisältö asetettu bannerin ja nav-barin jälkeen */
+main {
+  flex: 1;  /* Tämä osa venyy täyttämään jäljelle jäävän tilan */
+  padding-top: 250px; /* bannerin (200px) ja nav-barin (noin 50px) yhteiskorkeus */
+  background-color: #eeebeb;
+}
+
+/* Sisältöalueen esimerkkiasettelu. Sisältöalue bannerin ja footterin välissä*/
+.content-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Alkuun oli center, kuvat liikkui nopat sivulla alas listan mukaan */
+  padding: 20px;
+}
+.left-section,
+.right-section {
+  flex: 0 0 150px;
+}
+.center-section {
+  flex: 1;
+  margin: 0 20px;
+  text-align: center;
+}
+.left-section img,
+.right-section img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Kortit sivun content-alueen ylhäällä oleva kuva */
+.center-section img{
+  max-width: 10%;
+  height: auto;
+}
+
+/* Footer */
+.footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+/*Hyperlinkin oletusvärien säätö */
+.footer a {
+  color: white;
+}
+.footer a:hover {
+  color: #ccc;
+}
+
+/* NOPPA-osuus */
+/* Nopan valinta- ja heittöelementtien säätö */
+.dice-control {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/*Radio-nappejen tyylit */
+.dice-selection {
+  display: flex;
+  gap: 15px;
+}
+/*Kohta johon päivittyy heitetyn nopan silmäluku */
+.dice-result input {
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+  font-size: 1em;
+}
+
+/* Nopan heittojen historian tyylit */
+.roll-history {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.roll-history h3 {
+  margin-bottom: 10px;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 200px;
+}
+
+#historyList li {
+  background: #ddd;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
